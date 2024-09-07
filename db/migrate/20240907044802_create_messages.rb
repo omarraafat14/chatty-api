@@ -6,5 +6,6 @@ class CreateMessages < ActiveRecord::Migration[7.2]
       t.integer :number, null: false
       t.timestamps
     end
+    add_index :messages, [ :chat_id, :number ], unique: true
   end
 end
