@@ -15,6 +15,8 @@ class Chat < ApplicationRecord
   private
   def set_chat_number
     last_chat = application.chats.order(number: :desc).first
-    self.number = last_chat ? last_chat.number + 1 : 1
+    last_chat.with_lock do
+      self.number = last_chat ? last_chat.number + 1 : 1
+    end
   end
 end
