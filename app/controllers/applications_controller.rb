@@ -41,7 +41,7 @@ class ApplicationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_application
-      @application = Application.find_by!(token: params[:id])
+      @application = Application.find_by!(token: params[:token])
     end
 
     # Only allow a list of trusted parameters through.
