@@ -1,21 +1,22 @@
 class MessagesController < ApplicationController
+  before_action :set_chat
   before_action :set_message, only: %i[ show update destroy ]
 
-  # GET /messages
+  # GET applications/:application_token/chats/:chat_number/messages
   def index
-    @messages = Message.all
+    @messages = @chat.messages.all
 
     render json: @messages
   end
 
-  # GET /messages/1
+  # GET /applications/:application_token/chats/:chat_number/messages/:message_number
   def show
     render json: @message
   end
 
-  # POST /messages
+  # POST applications/:application_token/chats/:chat_number/messages
   def create
-    @message = Message.new(message_params)
+    @message = @chat.messages.new(message_params)
 
     if @message.save
       render json: @message, status: :created, location: @message
@@ -24,28 +25,32 @@ class MessagesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /messages/1
+  # PATCH/PUT /applications/:application_token/chats/:chat_number/messages/:message_number
   def update
-    if @message.update(message_params)
+    if @chat.messages.update(message_params)
       render json: @message
     else
       render json: @message.errors, status: :unprocessable_entity
     end
   end
 
-  # DELETE /messages/1
+  # DELETE /applications/:application_token/chats/:chat_number/messages/:message_number
   def destroy
     @message.destroy!
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_chat
+      @chat = Chat.find_by!(number: params[:chat_number])
+    end
+
     def set_message
-      @message = Message.find(params[:id])
+      @message = Message.find_by!(number: params[:number])
     end
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.fetch(:message, {})
+      params.require(:message).permit(:body)
     end
 end
