@@ -10,7 +10,7 @@ class Chat < ApplicationRecord
   before_validation :set_chat_number, on: :create
 
   # Scopes
-  scope :ordered, -> { order(created_at: :desc) }
+  scope :ordered, -> { order(id: :desc) }
 
   private
   def set_chat_number

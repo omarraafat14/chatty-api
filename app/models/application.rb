@@ -10,7 +10,7 @@ class Application < ApplicationRecord
   before_validation :generate_token, on: :create
 
   # Scopes
-  scope :ordered, -> { order(created_at: :desc) }
+  scope :ordered, -> { order(id: :desc) }
 
   private
 

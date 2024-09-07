@@ -10,7 +10,7 @@ class Message < ApplicationRecord
   before_validation :set_message_number, on: :create
 
   # Scopes
-  scope :ordered, -> { order(created_at: :desc) }
+  scope :ordered, -> { order(id: :desc) }
 
   private
   def set_message_number
