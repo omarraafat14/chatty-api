@@ -8,7 +8,7 @@ class ApplicationsController < ApplicationController
     render json: @applications
   end
 
-  # GET /applications/1
+  # GET /applications/{token}
   def show
     render json: @application
   end
@@ -24,7 +24,7 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /applications/1
+  # PATCH/PUT /applications/{token}
   def update
     if @application.update(application_params)
       render json: @application
@@ -33,7 +33,7 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # DELETE /applications/1
+  # DELETE /applications/{token}
   def destroy
     @application.destroy!
   end
@@ -41,11 +41,11 @@ class ApplicationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_application
-      @application = Application.find(params[:id])
+      @application = Application.find_by!(token: params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def application_params
-      params.fetch(:application, {})
+      params.require(:application).permit(:name)
     end
 end
