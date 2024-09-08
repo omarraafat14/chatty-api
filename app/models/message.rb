@@ -1,7 +1,10 @@
+require "elasticsearch/model"
 class Message < ApplicationRecord
-  # Association
-  belongs_to :chat, dependent: :destroy
-
+  # Elasticsearch
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  # Associationf
+  belongs_to :chat
   # Validations
   validates :body, presence: true
   validates :number, presence: true, uniqueness: { scope: :chat_id }
