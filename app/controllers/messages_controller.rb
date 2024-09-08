@@ -16,12 +16,14 @@ class MessagesController < ApplicationController
 
   # POST applications/:application_token/chats/:chat_number/messages
   def create
-    @message = @chat.messages.new(message_params)
-
-    if @message.save
-      render json: @message, status: :created, location: @message
+    ActiveRecord::Base.transaction do
+      if @message.valid?
+        message_number = @message.number
+        MessageCreationJob.perform_async(@chat.id, message_number, params[:body])
+        render json: { message_number: message_number }, status: :created
     else
-      render json: @message.errors, status: :unprocessable_entity
+        render json: { errors: @message.errors.full_messages }, status: :unprocessable_entity
+      end
     end
   end
 

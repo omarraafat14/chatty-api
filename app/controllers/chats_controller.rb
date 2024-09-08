@@ -16,8 +16,15 @@ class ChatsController < ApplicationController
 
   # POST /applications/:application_token/chats
   def create
-    @chat = @application.chats.create(chat_params)
-    render json: { number: @chat.number }, status: :created
+    ActiveRecord::Base.transaction do
+      if @chat.valid?
+        chat_number = @chat.number
+        ChatCreationJob.perform_async(@application.id, chat_number, params[:name])
+        render json: { chat_number: @chat.number }, status: :created
+      else
+        render json: { errors: @chat.errors.full_messages }, status: :unprocessable_entity
+      end
+    end
   end
 
   # PATCH/PUT /applications/:application_token/chats/:chat_number
