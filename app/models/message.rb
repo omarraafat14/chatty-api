@@ -3,7 +3,7 @@ class Message < ApplicationRecord
   # Elasticsearch
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
-  # Associationf
+  # Association
   belongs_to :chat
   # Validations
   validates :body, presence: true
@@ -35,8 +35,9 @@ class Message < ApplicationRecord
   private
   def set_message_number
     last_message = chat.messages.order(number: :desc).first
+    return self.number = 1 unless last_message
     last_message.with_lock do
-      self.number = last_message ? last_message.number + 1 : 1
+      self.number = last_message.number + 1
     end
   end
 end
