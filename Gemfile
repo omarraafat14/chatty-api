@@ -17,6 +17,10 @@ gem "tilt", "~> 2.4"
 gem "sidekiq", ">= 7.3.2"
 gem "sidekiq-scheduler", "~> 5.0"
 
+gem "will_paginate", ">= 4.0.1"
+# Use Elasticsearch
+gem "elasticsearch-rails"
+gem "elasticsearch-model"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
