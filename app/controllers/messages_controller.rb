@@ -38,6 +38,31 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy!
   end
+  def search
+    application = Application.find_by!(token: params[:application_token])
+    chat = application.chats.find_by!(number: params[:chat_number])
+    query = params[:query]
+
+    results = Message.search({
+      query: {
+        bool: {
+          must: {
+            match: {
+              body: {
+                query: query,
+                fuzziness: "AUTO"
+              }
+            }
+          },
+          filter: {
+            term: { chat_id: chat.id }
+          }
+        }
+      },
+    })
+    puts results.records
+    render json: results.records
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
