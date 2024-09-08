@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
   # GET applications/:application_token/chats/:chat_number/messages
   def index
-    @messages = @chat.messages.all
+    @messages = @chat.cached_messages
 
     render json: @messages
   end
@@ -27,7 +27,7 @@ class MessagesController < ApplicationController
 
   # PATCH/PUT /applications/:application_token/chats/:chat_number/messages/:message_number
   def update
-    if @chat.messages.update(message_params)
+    if @message.update(message_params)
       render json: @message
     else
       render json: @message.errors, status: :unprocessable_entity
