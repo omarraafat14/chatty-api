@@ -28,6 +28,13 @@ class Application < ApplicationRecord
     end
   end
 
+  # Caching all chats related to this application
+  def cached_chats
+    Rails.cache.fetch("application_#{token}_chats", expires_in: 1.hour) do
+      chats.ordered.to_a
+    end
+  end
+
   private
   def invalidate_all_applications_cache
     Rails.cache.delete("all_applications")
