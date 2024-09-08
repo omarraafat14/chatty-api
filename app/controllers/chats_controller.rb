@@ -4,7 +4,7 @@ class ChatsController < ApplicationController
 
   # GET /applications/:application_token/chats
   def index
-    @chats = @application.chats.all
+    @chats = @application.cached_chats
 
     render json: @chats
   end
@@ -22,13 +22,15 @@ class ChatsController < ApplicationController
 
   # PATCH/PUT /applications/:application_token/chats/:chat_number
   def update
-    @chat = @application.chats.update(chat_params)
+    if @chat.update(chat_params)
     render json: @chat
+else
+      render json: @chat.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   # DELETE /applications/:application_token/chats/:chat_number
   def destroy
-    @chat = @application.chats.find_by!(number: params[:chat_number])
     @chat.destroy
 
     head :no_content
@@ -41,7 +43,7 @@ class ChatsController < ApplicationController
     end
 
     def set_chat
-      @chat = Chat.find_by!(number: params[:number])
+      @chat = Chat.find_by_number!(params[:number])
     end
 
     # Only allow a list of trusted parameters through.
