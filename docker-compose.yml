@@ -24,10 +24,12 @@ services:
     depends_on:
       - db
       - redis
+      - elasticsearch
     volumes:
       - .:/rails
     environment:
       DATABASE_URL: '${DATABASE_URL}'
+      REDIS_URL: '${REDIS_URL}'
 
   redis:
     image: redis:alpine
@@ -46,12 +48,63 @@ services:
     depends_on:
       - db
       - redis
+      - elasticsearch
     volumes:
       - .:/rails
     environment:
       DATABASE_URL: '${DATABASE_URL}'
       REDIS_URL: '${REDIS_URL}'
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.1
+    container_name: chatty_elasticsearch
+    restart: always
+    environment:
+      - CLI_JAVA_OPTS=-Xms2g -Xmx2g
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+    ports:
+      - '${ELASTICSEARCH_PORT:-9200}:9200'
+    volumes:
+      - es_data:/usr/share/elasticsearch/data\
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+        reservations:
+          cpus: '1.0'
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.1
+    container_name: chatty_kibana
+    restart: always
+    environment:
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: d1a66dfd-c4d3-4a0a-8290-2abcb83ab3aa
+    ports:
+      - '${KIBANA_PORT:-5601}:5601'
+
+    volumes:
+      - kibana_data:/usr/share/kibana/data
+    depends_on:
+      - elasticsearch
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+        reservations:
+          cpus: '1.0'
+
 volumes:
   mysql_data:
   redis_data:
+  es_data:
+  kibana_data:
