@@ -1,0 +1,3636 @@
+{
+	"info": {
+		"_postman_id": "87dd8abc-8f26-4eb0-ac22-eec199fee689",
+		"name": "chat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12697718",
+		"_collection_link": "https://bit68-team.postman.co/workspace/stc-event-app~deefdc71-1ec3-429a-be69-f2fe1316f3f9/collection/12697718-87dd8abc-8f26-4eb0-ac22-eec199fee689?action=share&source=collection_link&creator=12697718"
+	},
+	"item": [
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "Get applications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications?page=1&per_page=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get applications",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications?page=1&per_page=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"59e5c34a2e7adce8a860c72da6d5e4b0\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "9da48cb0-ce2d-46f2-9cee-6c5f3910932a"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.071869"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=4.73, instantiation.active_record;dur=0.53, render.active_model_serializers;dur=4.85, process_action.action_controller;dur=20.25"
+								},
+								{
+									"key": "Content-Length",
+									"value": "894"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Applications fetched successfully\",\n    \"data\": [\n        {\n            \"name\": \"mm\",\n            \"token\": \"52efdc8b6fdec489\",\n            \"chats_count\": 0,\n            \"created_at\": \"2024-07-05T17:40:22.792Z\",\n            \"updated_at\": \"2024-07-05T17:40:22.792Z\"\n        },\n        {\n            \"name\": \"6U0DCIWIST\",\n            \"token\": \"0c8c973893436c33\",\n            \"chats_count\": 0,\n            \"created_at\": \"2024-07-05T17:40:49.732Z\",\n            \"updated_at\": \"2024-07-05T17:40:49.732Z\"\n        },\n        {\n            \"name\": \"34NRM9SILL\",\n            \"token\": \"ea676518a2b3d6a0\",\n            \"chats_count\": 0,\n            \"created_at\": \"2024-07-05T17:40:49.737Z\",\n            \"updated_at\": \"2024-07-05T17:40:49.737Z\"\n        },\n        {\n            \"name\": \"DN5222DFYF\",\n            \"token\": \"7d0d6be3fc0733ef\",\n            \"chats_count\": 0,\n            \"created_at\": \"2024-07-05T17:40:49.740Z\",\n            \"updated_at\": \"2024-07-05T17:40:49.740Z\"\n        },\n        {\n            \"name\": \"BTTAQTVAIH\",\n            \"token\": \"714dae2ba1378fee\",\n            \"chats_count\": 0,\n            \"created_at\": \"2024-07-05T17:40:49.759Z\",\n            \"updated_at\": \"2024-07-05T17:40:49.759Z\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"next_page\": 2,\n        \"prev_page\": null,\n        \"total_pages\": 823,\n        \"total_count\": 4111\n    },\n    \"errors\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Get application details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get application details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"ec3407a7307e5b3bb31cf82d90fcc668\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5c4e1d17-bd25-4f5c-86e0-ca325b2faf1f"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.061819"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=3.37, instantiation.active_record;dur=0.62, render.active_model_serializers;dur=4.70, process_action.action_controller;dur=16.32"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Application fetched successfully\",\n    \"data\": {\n        \"name\": \"Application Demo\",\n        \"token\": \"14b37956f83d5e4b\",\n        \"chats_count\": 0,\n        \"created_at\": \"2024-07-06T12:03:48.805Z\",\n        \"updated_at\": \"2024-07-06T12:03:48.805Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Get application details - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "fdsfdsfffffff"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dfd0cdf1-6a9c-44fc-b527-abae7965a835"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.172771"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=8.21, instantiation.active_record;dur=0.01, render.active_model_serializers;dur=0.11, process_action.action_controller;dur=19.37"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Application\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create application",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var application_token = jsonData.data.token;",
+									"if(application_token) {",
+									"    pm.globals.set(\"application_token\", application_token);",
+									"}",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Application Demo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/applications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create application",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Application Demo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"c3f58a3fe05fd6f94f773c0def578d24\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "a08d044c-64ce-4328-afb4-0fee62eb7390"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.096917"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=17.29, transaction.active_record;dur=25.37, render.active_model_serializers;dur=3.27, process_action.action_controller;dur=47.59"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Application created successfully\",\n    \"data\": {\n        \"name\": \"Application Demo\",\n        \"token\": \"6805b05ed7adb25d\",\n        \"chats_count\": 0,\n        \"created_at\": \"2024-07-06T12:01:23.278Z\",\n        \"updated_at\": \"2024-07-06T12:01:23.278Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Create application - bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "8f9db29d-f91e-446d-a1c6-5e10fe89da3c"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.024818"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, render.active_model_serializers;dur=0.30, process_action.action_controller;dur=5.41"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"param is missing or the value is empty: application\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update application",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Application Demo Updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update application",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Application Demo Updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1723eb0b51094e55cc9d3f98759ab025\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "2fcab13c-378b-473a-8a92-ee6cb3e87bee"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.085955"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=10.06, instantiation.active_record;dur=0.52, transaction.active_record;dur=7.65, render.active_model_serializers;dur=2.64, process_action.action_controller;dur=34.32"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Application updated successfully\",\n    \"data\": {\n        \"name\": \"Application Demo Updated\",\n        \"token\": \"14b37956f83d5e4b\",\n        \"chats_count\": 0,\n        \"created_at\": \"2024-07-06T12:03:48.805Z\",\n        \"updated_at\": \"2024-07-06T12:08:18.118Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Update application - bad request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "31e69a71-1daa-4c3e-95c5-35efba26558c"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.055549"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=6.40, instantiation.active_record;dur=0.55, render.active_model_serializers;dur=0.31, process_action.action_controller;dur=31.49"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"param is missing or the value is empty: application\"\n}"
+						},
+						{
+							"name": "Update application - not found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Application Demo Updated\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "fffff"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "5c742b97-0253-4191-8be4-fd388f6a78cd"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.116047"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=13.53, instantiation.active_record;dur=0.05, render.active_model_serializers;dur=0.29, process_action.action_controller;dur=58.91"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Application\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Chats",
+			"item": [
+				{
+					"name": "Get application Chats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats?page=1&per_page=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get application Chats",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats?page=1&per_page=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "5"
+										}
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"68116a7aa3f48840f5f2160b04359dd3\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d3e2087a-2114-445f-8f12-ba835b4a60b3"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.078135"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.20, sql.active_record;dur=4.46, instantiation.active_record;dur=1.80, render.active_model_serializers;dur=5.77, process_action.action_controller;dur=43.26"
+								},
+								{
+									"key": "Content-Length",
+									"value": "566"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Chats fetched successfully\",\n    \"data\": [\n        {\n            \"name\": \"New Chat\",\n            \"number\": 1,\n            \"messages_count\": 0,\n            \"created_at\": \"2024-07-06T12:10:25.753Z\",\n            \"updated_at\": \"2024-07-06T12:10:25.753Z\"\n        },\n        {\n            \"name\": \"New Chat\",\n            \"number\": 2,\n            \"messages_count\": 0,\n            \"created_at\": \"2024-07-06T12:11:33.412Z\",\n            \"updated_at\": \"2024-07-06T12:11:33.412Z\"\n        },\n        {\n            \"name\": \"New Chat updates\",\n            \"number\": 3,\n            \"messages_count\": 0,\n            \"created_at\": \"2024-07-06T12:19:37.811Z\",\n            \"updated_at\": \"2024-07-06T12:22:34.284Z\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"next_page\": null,\n        \"prev_page\": null,\n        \"total_pages\": 1,\n        \"total_count\": 3\n    },\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Get application Chats - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats?page=1&per_page=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "5"
+										}
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "fff"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d7d0f27f-c527-4d8e-90a7-689d165e5ce8"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.059186"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=3.29, instantiation.active_record;dur=0.03, render.active_model_serializers;dur=0.24, process_action.action_controller;dur=14.70"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Application\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get chat details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":number"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "number",
+									"value": "{{chat_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get chat details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"caab5a1bdb619421612025db6ad3fdf6\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "f985beb8-dad4-41e4-bcf1-747b15e8f142"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.103304"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=6.68, instantiation.active_record;dur=1.76, render.active_model_serializers;dur=2.49, process_action.action_controller;dur=23.43"
+								},
+								{
+									"key": "Content-Length",
+									"value": "214"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Chat fetched successfully\",\n    \"data\": {\n        \"name\": \"New Chat2\",\n        \"number\": 3,\n        \"messages_count\": 0,\n        \"created_at\": \"2024-07-06T12:19:37.811Z\",\n        \"updated_at\": \"2024-07-06T12:19:37.811Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Get chat details - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "51e65677-1eef-4525-be1e-8cd16560eb55"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.074612"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=4.61, instantiation.active_record;dur=0.62, render.active_model_serializers;dur=0.35, process_action.action_controller;dur=22.49"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Chat\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create chat",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var chat_number = jsonData.data.number;",
+									"if(chat_number) {",
+									"    pm.globals.set(\"chat_number\", chat_number);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Chat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create chat",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Chat\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"2bd3645671db718bd5eda93ba0fecdc0\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "dff51adc-2e31-4315-8eea-2c0a71caa715"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.134574"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.03, sql.active_record;dur=19.40, instantiation.active_record;dur=5.10, transaction.active_record;dur=46.11, render.active_model_serializers;dur=2.17, process_action.action_controller;dur=69.99"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Chats created successfully\",\n    \"data\": {\n        \"name\": \"New Chat\",\n        \"number\": 1,\n        \"messages_count\": 0,\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Create chat - bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fd2a050f-130e-4909-90d4-35ed2e271808"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.050314"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=4.79, instantiation.active_record;dur=0.77, transaction.active_record;dur=5.09, render.active_model_serializers;dur=0.26, process_action.action_controller;dur=23.53"
+								},
+								{
+									"key": "Content-Length",
+									"value": "106"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"param is missing or the value is empty: chat\"\n}"
+						},
+						{
+							"name": "Create chat - not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Chat\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "ffffff"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6b5048a9-5a9f-40b1-ae72-caf71ee1c46c"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.053039"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=2.99, instantiation.active_record;dur=0.04, render.active_model_serializers;dur=0.27, process_action.action_controller;dur=13.71"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Application\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update chat",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Chat updates\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":number"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "number",
+									"value": "{{chat_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update chat",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Chat updates\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"c6acf16af997cc2169e7446077971456\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "e0e43cc7-7098-4c36-ada0-114b26fd3354"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.088840"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=8.90, instantiation.active_record;dur=1.04, transaction.active_record;dur=6.75, render.active_model_serializers;dur=8.42, process_action.action_controller;dur=44.15"
+								},
+								{
+									"key": "Content-Length",
+									"value": "221"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Chat updated successfully\",\n    \"data\": {\n        \"name\": \"New Chat updates\",\n        \"number\": 3,\n        \"messages_count\": 0,\n        \"created_at\": \"2024-07-06T12:19:37.811Z\",\n        \"updated_at\": \"2024-07-06T12:22:34.284Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Update chat - bad request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d0b733df-6a98-4178-857f-23f6179e47a0"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.078335"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=5.81, instantiation.active_record;dur=2.55, render.active_model_serializers;dur=0.40, process_action.action_controller;dur=50.73"
+								},
+								{
+									"key": "Content-Length",
+									"value": "106"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"param is missing or the value is empty: chat\"\n}"
+						},
+						{
+							"name": "Update chat - not found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Chat updates\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "1222"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0d134883-dcb4-4e47-be79-451cd391fcaa"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.079893"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=10.75, instantiation.active_record;dur=1.03, render.active_model_serializers;dur=0.32, process_action.action_controller;dur=45.21"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Chat\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Get chat messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages?page=1&per_page=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":number",
+								"messages"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "number",
+									"value": "{{chat_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get chat messages",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages?page=1&per_page=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "5"
+										}
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"919a32672d4004d1b3c103ccbfd51b4b\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ff39a30b-b7b1-4b8f-8ee2-f49d7ae5cd60"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.059585"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=3.65, instantiation.active_record;dur=1.02, render.active_model_serializers;dur=6.57, process_action.action_controller;dur=32.59"
+								},
+								{
+									"key": "Content-Length",
+									"value": "526"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Messages fetched successfully\",\n    \"data\": [\n        {\n            \"number\": 1,\n            \"body\": \"New message\",\n            \"created_at\": \"2024-07-06T12:24:58.317Z\",\n            \"updated_at\": \"2024-07-06T12:24:58.317Z\"\n        },\n        {\n            \"number\": 2,\n            \"body\": \"New message body\",\n            \"created_at\": \"2024-07-06T12:26:14.280Z\",\n            \"updated_at\": \"2024-07-06T12:26:14.280Z\"\n        },\n        {\n            \"number\": 3,\n            \"body\": \"Update body message\",\n            \"created_at\": \"2024-07-06T12:30:33.467Z\",\n            \"updated_at\": \"2024-07-06T12:31:10.377Z\"\n        }\n    ],\n    \"meta\": {\n        \"current_page\": 1,\n        \"next_page\": null,\n        \"prev_page\": null,\n        \"total_pages\": 1,\n        \"total_count\": 3\n    },\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Get chat messages - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages?page=1&per_page=5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "5"
+										}
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "1223"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "fd1e95f0-eb96-4abc-8e74-86a6b7e0f16c"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.081548"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=15.37, instantiation.active_record;dur=0.67, render.active_model_serializers;dur=0.32, process_action.action_controller;dur=50.37"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Chat\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Search on specific chat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages/search?query=upd",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":number",
+								"messages",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "upd"
+								}
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "number",
+									"value": "{{chat_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search on specific chat",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages/search?query=upd",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "upd"
+										}
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"52c62f65f7a0b0a6da30ed99d3b90d6b\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d67c7e2a-8a87-4290-aa85-94b1ef61117c"
+								},
+								{
+									"key": "x-runtime",
+									"value": "1.129267"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=12.92, instantiation.active_record;dur=1.40, render.active_model_serializers;dur=1038.05, process_action.action_controller;dur=1091.46"
+								},
+								{
+									"key": "Content-Length",
+									"value": "211"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Messages fetched successfully\",\n    \"data\": [\n        {\n            \"body\": \"Update body message\",\n            \"number\": 3,\n            \"created_at\": \"2024-07-06T12:30:33.467Z\",\n            \"updated_at\": \"2024-07-06T12:31:10.377Z\"\n        }\n    ],\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Search on specific chat - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages/search?query=upd",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages",
+										"search"
+									],
+									"query": [
+										{
+											"key": "query",
+											"value": "upd"
+										}
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "1233"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "53e37449-703d-4afb-898f-45630b9940db"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.076275"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=11.78, instantiation.active_record;dur=1.80, render.active_model_serializers;dur=0.21, process_action.action_controller;dur=44.87"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Chat\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get chat details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":chat_number",
+								"messages",
+								":number"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "chat_number",
+									"value": "{{chat_number}}"
+								},
+								{
+									"key": "number",
+									"value": "{{message_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get chat details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":chat_number",
+										"messages",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "chat_number",
+											"value": "{{chat_number}}"
+										},
+										{
+											"key": "number",
+											"value": "{{message_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"4c3e0c66e48437b4f342a70290a05d78\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "d1391887-9055-480d-b8ec-ec206a60c191"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.081767"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.03, sql.active_record;dur=15.69, instantiation.active_record;dur=4.14, render.active_model_serializers;dur=3.45, process_action.action_controller;dur=57.47"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Message fetched successfully\",\n    \"data\": {\n        \"number\": 2,\n        \"body\": \"New message body\",\n        \"created_at\": \"2024-07-06T12:26:14.280Z\",\n        \"updated_at\": \"2024-07-06T12:26:14.280Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Get chat details - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":chat_number",
+										"messages",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "chat_number",
+											"value": "{{chat_number}}"
+										},
+										{
+											"key": "number",
+											"value": "11111"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "ad8b4904-3e27-4e15-900d-f3183ee50574"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.084809"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.01, sql.active_record;dur=19.68, instantiation.active_record;dur=1.66, render.active_model_serializers;dur=0.18, process_action.action_controller;dur=51.87"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Message\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create message",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"var message_number = jsonData.data.number;",
+									"if(message_number) {",
+									"    pm.globals.set(\"message_number\", message_number);",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"New message body\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":number",
+								"messages"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "number",
+									"value": "{{chat_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create message",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"body\": \"New message body\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"7a2245c47eadc04820897c2764d1b457\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "6effd4f6-3b3a-41b0-8f21-875737c720c0"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.116663"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=13.39, instantiation.active_record;dur=1.56, transaction.active_record;dur=23.98, render.active_model_serializers;dur=29.65, process_action.action_controller;dur=65.69"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Message created successfully\",\n    \"data\": {\n        \"number\": 2,\n        \"body\": \"New message body\",\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Create message - bad request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "{{chat_number}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "755c2611-c240-447f-b476-a7b5e453a33e"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.077669"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=8.01, instantiation.active_record;dur=1.83, transaction.active_record;dur=6.13, render.active_model_serializers;dur=0.26, process_action.action_controller;dur=33.42"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"param is missing or the value is empty: message\"\n}"
+						},
+						{
+							"name": "Create message - not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"body\": \"New message body\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:number/messages",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":number",
+										"messages"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "number",
+											"value": "122"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "82f41215-4b7f-4bb6-a91b-c8c2a5c1badf"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.073418"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=4.59, instantiation.active_record;dur=0.58, render.active_model_serializers;dur=0.25, process_action.action_controller;dur=21.14"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Chat\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update message",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"Update body message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"applications",
+								":application_token",
+								"chats",
+								":chat_number",
+								"messages",
+								":number"
+							],
+							"variable": [
+								{
+									"key": "application_token",
+									"value": "{{application_token}}"
+								},
+								{
+									"key": "chat_number",
+									"value": "{{chat_number}}"
+								},
+								{
+									"key": "number",
+									"value": "{{message_number}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update message",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"body\": \"Update body message\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":chat_number",
+										"messages",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "chat_number",
+											"value": "{{chat_number}}"
+										},
+										{
+											"key": "number",
+											"value": "{{message_number}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"a8d154c67dc248bb31f30620f24530ec\""
+								},
+								{
+									"key": "cache-control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "x-request-id",
+									"value": "81315d30-f481-49e3-bb81-b1823a1ee45a"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.142925"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.03, sql.active_record;dur=17.19, instantiation.active_record;dur=1.47, transaction.active_record;dur=9.06, render.active_model_serializers;dur=2.54, process_action.action_controller;dur=97.72"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Message updated successfully\",\n    \"data\": {\n        \"number\": 3,\n        \"body\": \"Update body message\",\n        \"created_at\": \"2024-07-06T12:30:33.467Z\",\n        \"updated_at\": \"2024-07-06T12:31:10.377Z\"\n    },\n    \"meta\": [],\n    \"errors\": []\n}"
+						},
+						{
+							"name": "Update message -  bad request",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":chat_number",
+										"messages",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "chat_number",
+											"value": "{{chat_number}}"
+										},
+										{
+											"key": "number",
+											"value": "{{message_number}}"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "9c6d3b69-585c-4ac7-86f8-da7876950c0d"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.053362"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=4.43, instantiation.active_record;dur=1.26, render.active_model_serializers;dur=1.09, process_action.action_controller;dur=25.20"
+								},
+								{
+									"key": "Content-Length",
+									"value": "109"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"param is missing or the value is empty: message\"\n}"
+						},
+						{
+							"name": "Update message - not found",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"body\": \"Update body message\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/applications/:application_token/chats/:chat_number/messages/:number",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"applications",
+										":application_token",
+										"chats",
+										":chat_number",
+										"messages",
+										":number"
+									],
+									"variable": [
+										{
+											"key": "application_token",
+											"value": "{{application_token}}"
+										},
+										{
+											"key": "chat_number",
+											"value": "{{chat_number}}"
+										},
+										{
+											"key": "number",
+											"value": "111"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "vary",
+									"value": "Accept"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "x-request-id",
+									"value": "0cd4069a-2d60-46c9-ac84-81931ae257d9"
+								},
+								{
+									"key": "x-runtime",
+									"value": "0.127885"
+								},
+								{
+									"key": "server-timing",
+									"value": "start_processing.action_controller;dur=0.02, sql.active_record;dur=4.08, instantiation.active_record;dur=0.45, render.active_model_serializers;dur=0.18, process_action.action_controller;dur=13.92"
+								},
+								{
+									"key": "Content-Length",
+									"value": "90"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"\",\n    \"data\": [],\n    \"meta\": [],\n    \"errors\": \"Record not found for Message\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
